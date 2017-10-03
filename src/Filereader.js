@@ -21,11 +21,11 @@ window.onload = function() {
 		}
   });
   
-  printWords = function(div, array) {
-    array = [];
+  printWords = function(divId, array) {
+    htmlArray = [];
     for (var i = 0; i < array.length; i++) {
       htmlArray.push("<p> <b>" + array[i][0]  + "</b> - " + array[i][1]  + "</p>");
     }
-    div.innerHTML = array.join('');
+    divId.innerHTML = htmlArray.join('');
   }
 }
