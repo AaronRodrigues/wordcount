@@ -40,4 +40,8 @@ describe('WordCount', function(){
     expect(_isPrime(3)).toBeTruthy();
     expect(_isPrime(11)).toBeTruthy();
   });
+  
+  it('Executes all functions to produce a 2d array of word frequencies', function() {
+    expect(wordCount.executeWordCount()).toEqual([ [ 'tequila', 3 ], [ 'floor', 1], [ 'three', 1 ], ['two', 1], ['one', 1] ] );
+  });
 });

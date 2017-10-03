@@ -1,3 +1,4 @@
+(function(exports) {
 var WordCount = function(text) {
   this.text = text;
 }
@@ -29,6 +30,13 @@ WordCount.prototype.sortArrayDescendingFrequency = function (array) {
  return array.reverse();
 };
 
+WordCount.prototype.executeWordCount = function () {
+  var wordArray = this.stringToArrayOfLowerCaseWords();
+  var hash = this.wordFrequency(wordArray);
+  var wordFrequencyArray = this.hashToArray(hash);
+  return this.sortArrayDescendingFrequency(wordFrequencyArray);
+};
+
 _isPrime = function(number){
   var start = 2;
     while (start <= Math.sqrt(number)) {
@@ -36,3 +44,5 @@ _isPrime = function(number){
     }
     return number > 1;
 }
+exports.WordCount = WordCount;
+})(this);
