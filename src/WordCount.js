@@ -3,7 +3,7 @@ var WordCount = function(text) {
 }
 
 WordCount.prototype.stringToArrayOfLowerCaseWords = function (text) {
-    return this.text.replace(/\W+/g, ' ').toLowerCase().split(' ');
+  return this.text.replace(/\W+/g, ' ').toLowerCase().split(' ');
 };
 
 WordCount.prototype.wordFrequency = function (array){
@@ -11,3 +11,20 @@ WordCount.prototype.wordFrequency = function (array){
     frequency[word] = (+frequency[word]||0)+1; return frequency
   },{});
 }
+
+WordCount.prototype.hashToArray = function (hash) {
+  var array = [];
+    for (var key in hash) {
+      if (hash.hasOwnProperty(key)) {
+        array.push([key, hash[key]])
+      }
+    }
+  return array;
+};
+
+WordCount.prototype.sortArrayDescendingFrequency = function (array) {
+ array = array.sort(function(a,b) {
+ return a[1] - b[1];
+ });
+ return array.reverse();
+};
