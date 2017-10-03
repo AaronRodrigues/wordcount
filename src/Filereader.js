@@ -1,21 +1,21 @@
 window.onload = function() {
-		var fileInput = document.getElementById('fileInput');
-		var fileDisplayArea = document.getElementById('fileDisplayArea');
 
-		fileInput.addEventListener('change', function(e) {
-			var file = fileInput.files[0];
-			var textType = /text.*/;
+  var fileInput = document.getElementById('fileInput');
 
-			if (file.type.match(textType)) {
-				var reader = new FileReader();
+  fileInput.addEventListener('change', function () {
+    var file = fileInput.files[0];
 
-				reader.onload = function(e) {
-					fileDisplayArea.innerText = reader.result;
-				}
-
-				reader.readAsText(file);	
-			} else {
-				fileDisplayArea.innerText = "File not supported! Please select a text file"
-			}
-		});
+    if (file.type.match(/text.*/)) {
+      var fileReader = new FileReader();
+      fileReader.readAsText(file);
+      
+      fileReader.onload = function() {
+        var wordCount = new WordCount(fileReader.result); 
+        var wordArray = wordCount.executeWordCount();
+        console.log(wordArray);
+      };
+    }else {
+				fileDisplayArea.innerText = "File not supported!"
+		}
+  });
 }
