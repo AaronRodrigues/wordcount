@@ -13,6 +13,12 @@ describe('WordCount', function(){
   
   it('splits a body of text into an array of words in lowercase ', function(){
     var test = new WordCount("One Tequila, Two Tequila, Three Tequila, Floor")
-      expect(wordCount.stringToArrayOfLowerCaseWords()).toEqual([ "one", "tequila,", "two", "tequila,", "three", "tequila,", "floor" ])
+      expect(wordCount.stringToArrayOfLowerCaseWords()).toEqual([ "one", "tequila", "two", "tequila", "three", "tequila", "floor" ])
   });
+  
+  it('counts the frequency of words in an array', function() {
+      var wordArray = wordCount.stringToArrayOfLowerCaseWords();
+      console.log(wordArray);
+      expect(wordCount.wordFrequency(wordArray)).toEqual({"tequila": 3, "one": 1, "two": 1, "three": 1, "floor": 1});
+    });
 });
