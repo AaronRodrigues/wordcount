@@ -28,3 +28,11 @@ WordCount.prototype.sortArrayDescendingFrequency = function (array) {
  });
  return array.reverse();
 };
+
+_isPrime = function(number){
+  var start = 2;
+    while (start <= Math.sqrt(number)) {
+        if (number % start++ < 1) return false;
+    }
+    return number > 1;
+}
