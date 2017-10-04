@@ -12,20 +12,12 @@ window.onload = function() {
       fileReader.onload = function() {
         var wordCount = new WordCount(fileReader.result); 
         var wordArray = wordCount.executeWordCount();
-        var wordBody = document.getElementById('wordBody');
-        console.log(wordArray);
-        printWords(wordBody, wordArray);
+        var wordPrinter = new WordPrinter(wordArray);
+        wordBody.innerHTML = wordPrinter.printWords(wordArray).join(' ');
+        console.log(wordBody.innerHTML);
       };
     }else {
 				fileDisplayArea.innerText = "File not supported!"
 		}
   });
-  
-  printWords = function(divId, array) {
-    htmlArray = [];
-    for (var i = 0; i < array.length; i++) {
-      htmlArray.push("<p> <b>" + array[i][0]  + "</b> - " + array[i][1]  + "</p>");
-    }
-    divId.innerHTML = htmlArray.join('');
-  }
 }
