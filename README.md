@@ -40,16 +40,16 @@ TDD is expected
 
 ### Approach
 
-1. WordCount object takes string of text as an argument and stores it
-2. Converts body into a an array of lowercase words
-3. WordCount removes duplicate words from array and saves this array as a reference array
-4. Uses this reference array and counts the words in the text
-5. Arrange the words : count in decreasing order
-6. Check which numbers are prime numbers and return the word and number
+1. WordCount object takes string of text as an argument and stores it.
+2. Converts a body of text into a an array of lowercase words.
+3. WordCount removes duplicate words from array and saves this array as a reference array.
+4. Uses this reference array and counts the words in the text.
+5. Arrange the words and frequency in decreasing order.
+6. Checks if a number is Prime and indicates this in the view.
 
 ### Problems Faced
 
-1. I found reading files not as straightforward as languages like Ruby. From what I have found, JavaScript only allows the user to select a file from a personal computer and does not give access to the file system for security reasons. In a language like Ruby, this would be a trivial thing to do. I was not sure about testing this code.
+ I found difficulty in reading the text file using JavaScript. I found this easier to do in languages like Ruby. I used a FileReader script which I was not sure how to test.
 
 ### Further Improvements
 
