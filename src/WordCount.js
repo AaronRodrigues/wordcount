@@ -37,12 +37,5 @@ WordCount.prototype.executeWordCount = function () {
   return this.sortArrayDescendingFrequency(wordFrequencyArray);
 };
 
-_isPrime = function(number){
-  var start = 2;
-    while (start <= Math.sqrt(number)) {
-        if (number % start++ < 1) return false;
-    }
-    return number > 1;
-}
 exports.WordCount = WordCount;
 })(this);

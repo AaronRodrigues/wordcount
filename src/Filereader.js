@@ -14,7 +14,6 @@ window.onload = function() {
         var wordArray = wordCount.executeWordCount();
         var wordPrinter = new WordPrinter(wordArray);
         wordBody.innerHTML = wordPrinter.printWords(wordArray).join(' ');
-        console.log(wordBody.innerHTML);
       };
     }else {
 				fileDisplayArea.innerText = "File not supported!"
